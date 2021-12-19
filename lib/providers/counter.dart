@@ -19,6 +19,6 @@ class CounterProvider extends InheritedWidget{
 
   @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) {
-    throw true;
+    return true;
   }
 }
