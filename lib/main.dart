@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:lojaexemplo/models/product_list.dart';
 import 'package:lojaexemplo/pages/counter_page.dart';
 import 'package:lojaexemplo/pages/product_detail_page.dart';
 import 'package:lojaexemplo/pages/products_overview_page.dart';
 import 'package:lojaexemplo/providers/counter.dart';
 import 'package:lojaexemplo/utils/app_routes.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+      const MyApp()
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,19 +18,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CounterProvider(
+    /*return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        accentColor: Colors.deepOrange,
+        fontFamily: 'Lato'
+      ),
+      home: ProductsOverviewPage(),
+      routes: {
+        AppRoutes.PRODUCT_DETAIL:(ctx) => ProductDetailPage()
+      },
+    );*/
+    return ChangeNotifierProvider(
+      create: (_) => ProductList(),
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.purple,
           accentColor: Colors.deepOrange,
-          fontFamily: 'Lato'
+          fontFamily: 'Lato',
         ),
         home: ProductsOverviewPage(),
         routes: {
-          AppRoutes.PRODUCT_DETAIL:(ctx) => CounterPage()
+          AppRoutes.PRODUCT_DETAIL: (ctx) => ProductDetailPage(),
         },
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
