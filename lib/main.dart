@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lojaexemplo/models/product_list.dart';
-import 'package:lojaexemplo/pages/counter_page.dart';
 import 'package:lojaexemplo/pages/product_detail_page.dart';
 import 'package:lojaexemplo/pages/products_overview_page.dart';
-import 'package:lojaexemplo/providers/counter.dart';
 import 'package:lojaexemplo/utils/app_routes.dart';
 import 'package:provider/provider.dart';
 
